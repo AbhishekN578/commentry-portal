@@ -2,6 +2,18 @@
 
 A full-stack social media platform built with Django REST Framework and React.
 
+## 🚀 Live Demo
+
+> **Note**: Follow the [Deployment Guide](./DEPLOYMENT.md) to deploy your own instance.
+
+**Frontend**: Deploy to Vercel → [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/AbhishekN578/commentry-portal)
+
+**Backend**: Deploy to Railway → [![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template?template=https://github.com/AbhishekN578/commentry-portal)
+
+Once deployed, your live demo will be available at:
+- **Frontend**: `https://your-project.vercel.app`
+- **Backend API**: `https://your-project.railway.app/api`
+
 ## Features
 
 ### User Features
@@ -170,11 +182,47 @@ commentry-portal/
 - **Likes**: Authenticated users can like/unlike
 - **Admin Dashboard**: Only admin users can access
 
+## Deployment
+
+See the [Deployment Guide](./DEPLOYMENT.md) for detailed instructions on deploying to production.
+
+### Quick Deploy
+
+**Backend (Railway)**:
+1. Create a Railway project from your GitHub repo
+2. Add PostgreSQL database
+3. Set environment variables (see below)
+4. Deploy automatically
+
+**Frontend (Vercel)**:
+1. Import your GitHub repo to Vercel
+2. Set root directory to `frontend`
+3. Add `REACT_APP_API_URL` environment variable
+4. Deploy
+
+### Environment Variables
+
+**Backend** (`.env` file or Railway environment variables):
+```
+SECRET_KEY=your-secret-key
+DEBUG=False
+ALLOWED_HOSTS=your-domain.railway.app
+FRONTEND_URL=https://your-frontend.vercel.app
+DATABASE_URL=postgresql://... (auto-set by Railway)
+```
+
+**Frontend** (`.env` file or Vercel environment variables):
+```
+REACT_APP_API_URL=https://your-backend.railway.app/api
+```
+
 ## Development Notes
 
-- The backend uses MySQL with credentials: root/9113
-- JWT tokens expire after 1 day
-- CORS is configured for localhost:3000
-- Media files (avatars, post images) are stored in backend/media/
+- **Local Backend**: MySQL with credentials root/9113
+- **Production Backend**: PostgreSQL on Railway
+- **JWT Tokens**: Expire after 1 day
+- **CORS**: Configured for localhost:3000 and production frontend
+- **Media Files**: Stored in backend/media/ (local) or cloud storage (production)
+- **Static Files**: Served by WhiteNoise in production
 
 
