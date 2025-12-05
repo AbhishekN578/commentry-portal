@@ -5,8 +5,23 @@ Django settings for social_platform project.
 from pathlib import Path
 from datetime import timedelta
 import os
-import dj_database_url
-from decouple import config
+
+# Import production dependencies with fallback
+try:
+    import dj_database_url
+except ImportError:
+    dj_database_url = None
+
+try:
+    from decouple import config
+except ImportError:
+    # Fallback if decouple is not installed
+    import os
+    def config(key, default=None, cast=None):
+        value = os.environ.get(key, default)
+        if cast and value is not None:
+            return cast(value)
+        return value
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -78,7 +93,7 @@ WSGI_APPLICATION = 'social_platform.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 # Use DATABASE_URL if available (production), otherwise use local MySQL
-if config('DATABASE_URL', default=None):
+if config('DATABASE_URL', default=None) and dj_database_url:
     DATABASES = {
         'default': dj_database_url.config(
             default=config('DATABASE_URL'),
