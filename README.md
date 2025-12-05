@@ -177,6 +177,4 @@ commentry-portal/
 - CORS is configured for localhost:3000
 - Media files (avatars, post images) are stored in backend/media/
 
-## License
 
-MIT License
