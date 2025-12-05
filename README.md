@@ -45,7 +45,6 @@ A full-stack social media platform built with Django REST Framework and React.
 - Python 3.8+
 - Node.js 16+
 - MySQL Server
-- MySQL root password: 9113
 
 ### Backend Setup
 
