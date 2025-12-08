@@ -4,13 +4,6 @@ A full-stack social media platform built with Django REST Framework and React.
 
 ## 🚀 Live Demo
 
-> **Note**: Follow the [Deployment Guide](./DEPLOYMENT.md) to deploy your own instance.
-
-
-Once deployed, your live demo will be available at:
-- **Frontend**: `https://your-project.vercel.app`
-- **Backend API**: `https://your-project.railway.app/api`
-
 ## Features
 
 ### User Features
