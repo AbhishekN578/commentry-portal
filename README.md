@@ -6,9 +6,6 @@ A full-stack social media platform built with Django REST Framework and React.
 
 > **Note**: Follow the [Deployment Guide](./DEPLOYMENT.md) to deploy your own instance.
 
-**Frontend**: Deploy to Vercel → [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/AbhishekN578/commentry-portal)
-
-**Backend**: Deploy to Railway → [![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template?template=https://github.com/AbhishekN578/commentry-portal)
 
 Once deployed, your live demo will be available at:
 - **Frontend**: `https://your-project.vercel.app`
